@@ -1,0 +1,47 @@
+<html >
+    <head>
+        <title>inedx</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="index.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="controller.js"></script>
+    </head>
+    <body>
+        <div class="container" ng-app="myApp" ng-controller="myCtrl">
+            <h1>Data Entry</h1>
+            <table border="1"   >
+                <tr>
+                    <th>name</th>
+                    <th>email</th>
+                    <th>number</th>
+                    <th>action</th>
+                </tr>
+                <tr>
+                    <td><input type="text"  class="from-control" ng-model="contact.name" /></td>
+                    <td> <input type="text"  class="from-control" ng-model="contact.email"  /></td>
+                    <td><input type="text"  class="from-control" ng-model="contact.number" /></td>
+                    <td>
+                        <button class=" btn btn-primary" ng-click="addcontact()">save</button>
+                        <button class="btn btn-danger" ng-click="update()">update</button>
+                    </td>
+                    
+                </tr>
+                <tr ng-repeat="contact in contactlist">
+                    <td>{{contact.name}}</td>
+                    <td>{{contact.email}}</td>
+                    <td>{{contact.number}}</td>
+                    <td>
+                        <button class="btn btn-info" ng-click="edit(contact._id)">Edit</button>
+                        <button class="btn btn-warning" ng-click="remove(contact._id)">Delete</button>
+                    </td>
+                </tr>
+            
+            </table>
+          
+         </div>
+    </body>
+</html>

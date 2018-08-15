@@ -1,0 +1,21 @@
+.container{
+    width:100%;
+    height:50px;
+
+
+}
+table{
+    background: lightgray;
+    
+}
+table tr td,th{
+    padding: 5px;
+    text-align: center;
+    text-transform: capitalize;
+
+}
+input[type='text']{
+    width: 80%;
+    border-radius: 4px;
+    height:30px;
+}
